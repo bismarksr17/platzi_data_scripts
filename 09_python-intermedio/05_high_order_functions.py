@@ -85,10 +85,29 @@ def mayores_a_18():
     nombres = list(map(lambda x:x['name'],lista_adultes))
     return nombres
 
+# funcion que agrega el parametro 'old' al diccionatio si trabajador es mayor de 70
+def add_old(x):
+    if x['age'] > 70:
+        x['old'] = True
+    else:
+        x['old'] = False
+    return x
+
+# agregar parametro 'old' si trabajador es mayor de 70
+# se puede realizar de dos formas:
+def old():
+    # forma 1: con operador |, que agrega un diccionario a otro
+    # solo funciona a partir de python 3.9
+    # datos = list(map(lambda x: x | {'old':x['age']>70}, DATA))
+
+    # forma 2: con una funcion secundaria que agrega el parametro 'old'
+    datos = list(map(add_old, DATA))
+
+    return datos
 
 # principal
 def run():
-    print(mayores_a_18())
+    print(old())
 
 
 # punto de entrada
