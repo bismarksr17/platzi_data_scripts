@@ -6,7 +6,7 @@ def is_palindrome(string: str) -> bool:
 def run():
     # se envia un entero en lugar de una cadena para 
     # que se genere en error
-    print(is_palindrome(2000))
+    print(is_palindrome('hola'))
 
 
 if __name__ == '__main__':
