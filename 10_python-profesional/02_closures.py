@@ -12,5 +12,6 @@ def run():
     repeat_10 = make_repeater_of(10)
     print(repeat_10('Platzi'))
 
+
 if __name__ == '__main__':
     run()
