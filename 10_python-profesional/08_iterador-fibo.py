@@ -1,7 +1,11 @@
 # time, para hacer mas lento la ejecucion con la funcion sleep()
+from itertools import count
 import time
 
 class FiboIter():
+
+    def __init__(self, max=None):
+        self.max = max
 
     def __iter__(self):
         self.n1 = 0
@@ -10,6 +14,8 @@ class FiboIter():
         return self
     
     def __next__(self):
+        if self.max == self.counter:
+            raise StopIteration
         if self.counter == 0:
             self.counter += 1
             return self.n1
